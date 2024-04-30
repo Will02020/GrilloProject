@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/chat.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css">
+    <link rel="icon" type="image/x-icon" href="../static/imgs/favicon.png">
+    <title>Il Grillo</title>
+</head>
+
+
+
+<body>
+
+    
+
+  <nav class="navbar navbar-expand-lg shadow w-100">
+    <div class="container-fluid" style="justify-content: center;">
+        <nav class="navbar navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand" onclick="window.location.href = '/' ; ">
+                <img src="../static/imgs/favicon.png" alt="" width="80" height="70" class="d-inline-block align-text-top">
+                
+              </a>
+            </div>
+        </nav>
+      </button>
+      
+    </div>
+  </nav>
+    <div class="container-fluid main">
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Questionario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: #8e408f; color: white; border-color: transparent; padding: 5px; border-radius: 10px; width: 30px; font-size: 15px;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p class="qtitle">Cari studenti, al termine di questo percorso vi chiediamo di rispondere a un breve questionario di valutazione. <br>Le informazioni che ci darete saranno davvero utili per mettere a punto la versione definitiva della piattaforma Il Grillo.<br>Grazie per la vostra partecipazione!</p>
+
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Che classe frequenti?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="first1">
+                        <label class="form-check-label" for="first1">
+                          Prima media
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="first2" >
+                        <label class="form-check-label" for="first2">
+                          Seconda media
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="first3" >
+                        <label class="form-check-label" for="first3">
+                          Terza media
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Qual è il tuo sesso?</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="second1">
+                          <label class="form-check-label" for="second1">
+                            Maschio
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="second2" >
+                          <label class="form-check-label" for="second2">
+                            Femmina
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="second3" >
+                          <label class="form-check-label" for="second3">
+                            Altro
+                          </label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Come valuti l’utilizzo della piattaforma?</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="third1">
+                          <label class="form-check-label" for="third1">
+                            Molto semplice
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="third2" >
+                          <label class="form-check-label" for="third2">
+                            Abbastanza complessa
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="third3" >
+                          <label class="form-check-label" for="third3">
+                            Poco complessa
+                          </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label" style="font-weight: bold;">quali sono gli argomenti che più hai difficoltà in matematica?</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Come valuti la grafica dei contenuti? (Scelta multipla)</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth1">
+                          <label class="form-check-label" for="fourth1">
+                            Accattivante e coinvolgente
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth2" >
+                          <label class="form-check-label" for="fourth2">
+                            Facilita l’apprendimento
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth3" >
+                          <label class="form-check-label" for="fourth3">
+                            Confonde e distrae
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth4" >
+                          <label class="form-check-label" for="fourth4">
+                            Poco accattivante
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth5" >
+                          <label class="form-check-label" for="fourth5">
+                            Troppo descrittivi
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth6" >
+                          <label class="form-check-label" for="fourth6">
+                            Altro
+                          </label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">La spiegazione dell’argomento: </label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth1">
+                          <label class="form-check-label" for="fifth1">
+                            Si capisce ed è interessante
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth2" >
+                          <label class="form-check-label" for="fifth2">
+                            Si capisce ma non è interessante 
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth3" >
+                          <label class="form-check-label" for="fifth3">
+                            Non si capisce ma è interessante
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth4" >
+                          <label class="form-check-label" for="fifth4">
+                            Non si capisce e non è interessante
+                          </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Che tipo di contenuti preferiresti per lo studio? (Puoi lasciare più risposte)</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth1">
+                        <label class="form-check-label" for="sixth1">
+                          Più contenuti Video
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth2" >
+                        <label class="form-check-label" for="sixth2">
+                          Più contenuti descrittivi
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth3" >
+                        <label class="form-check-label" for="sixth3">
+                          Giochi e curiosità sull’argomento trattato
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth4" >
+                        <label class="form-check-label" for="sixth4">
+                          Va bene così
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">L'esperienza con il grillo è stata:</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh1">
+                        <label class="form-check-label" for="seventh1">
+                          Chiara e motivante 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh2" >
+                        <label class="form-check-label" for="seventh2">
+                          In linea con gli argomenti trattati dal professore
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh3" >
+                        <label class="form-check-label" for="seventh3">
+                          Confusa, non mi sono trovato molto bene
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh4" >
+                        <label class="form-check-label" for="seventh4">
+                          Noioso, ho faticato a capire 
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label" style="font-weight: bold;">Perché? Hai suggerimenti?</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">L’interazione con l’assistente virtuale ti ha aiutato a capire meglio l’argomento?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth1">
+                        <label class="form-check-label" for="eighth1">
+                          Sì, mi ha aiutato
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth2" >
+                        <label class="form-check-label" for="eighth2">
+                          No, non mi ha aiutato
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label" style="font-weight: bold;">Perché? Dacci un consiglio</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Invia Risposte</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: #8e408f; color: white; border-color: transparent; padding: 5px; border-radius: 10px; width: 30px; font-size: 15px;">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Qual è il risultato della somma di 9 e 12?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first1">
+                      <label class="form-check-label" for="first1">
+                        19
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first2" >
+                      <label class="form-check-label" for="first2">
+                        20
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first3" >
+                      <label class="form-check-label" for="first3">
+                        21
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first4" >
+                      <label class="form-check-label" for="first4">
+                        22
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri naturali è un multiplo di 5?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second1">
+                      <label class="form-check-label" for="second1">
+                        7
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second2" >
+                      <label class="form-check-label" for="second2">
+                        10
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second3" >
+                      <label class="form-check-label" for="second3">
+                        13
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second4" >
+                      <label class="form-check-label" for="second4">
+                        16
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale è il successore di 20?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third1">
+                      <label class="form-check-label" for="third1">
+                        19
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third2" >
+                      <label class="form-check-label" for="third2">
+                        20
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third3" >
+                      <label class="form-check-label" for="third3">
+                        21
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third4" >
+                      <label class="form-check-label" for="third4">
+                        22
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Qual è il doppio di 15?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth1">
+                      <label class="form-check-label" for="fourth1">
+                        20
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth2" >
+                      <label class="form-check-label" for="fourth2">
+                        25
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth3" >
+                      <label class="form-check-label" for="fourth3">
+                        30
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth4" >
+                      <label class="form-check-label" for="fourth4">
+                        35
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri naturali è un quadrato perfetto?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth1">
+                      <label class="form-check-label" for="fifth1">
+                        6
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth2" >
+                      <label class="form-check-label" for="fifth2">
+                        8
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth3" >
+                      <label class="form-check-label" for="fifth3">
+                        16
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth4" >
+                      <label class="form-check-label" for="fifth4">
+                        18
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale è il risultato della moltiplicazione di 5 per 0?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth1">
+                      <label class="form-check-label" for="sixth1">
+                        0
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth2" >
+                      <label class="form-check-label" for="sixth2">
+                        5
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth3" >
+                      <label class="form-check-label" for="sixth3">
+                        1
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth4" >
+                      <label class="form-check-label" for="sixth4">
+                        10
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri naturali è anche un numero primo?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh1">
+                      <label class="form-check-label" for="seventh1">
+                        4
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh2" >
+                      <label class="form-check-label" for="seventh2">
+                        9
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh3" >
+                      <label class="form-check-label" for="seventh3">
+                        11
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh4" >
+                      <label class="form-check-label" for="seventh4">
+                        14
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale è il risultato della sottrazione di 17 da 23?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth1">
+                      <label class="form-check-label" for="eighth1">
+                        6
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth2" >
+                      <label class="form-check-label" for="eighth2">
+                        7
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth3" >
+                      <label class="form-check-label" for="eighth3">
+                        12
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth4" >
+                      <label class="form-check-label" for="eighth4">
+                        15
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">In quale intervallo si trovano i primi 3 numeri naturali?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth1">
+                      <label class="form-check-label" for="ninth1">
+                        1 a 3
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth2" >
+                      <label class="form-check-label" for="ninth2">
+                        2 a 4
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth3" >
+                      <label class="form-check-label" for="ninth3">
+                        0 a 2
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth4" >
+                      <label class="form-check-label" for="ninth4">
+                        1 a 4
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Qual è il risultato della divisione di 28 per 7?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth1">
+                      <label class="form-check-label" for="tenth1">
+                        2
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth2" >
+                      <label class="form-check-label" for="tenth2">
+                        4
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth3" >
+                      <label class="form-check-label" for="tenth3">
+                        7
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth4" >
+                      <label class="form-check-label" for="tenth4">
+                        8
+                      </label>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Invia Risposte</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn qst-btn shadow-chat" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button"><span class="fa fa-question" style="min-height: 25px; min-width: 25px;"></span></div>
+        <div class="btn chat-btn shadow-chat" id="chat" onclick="openchat();"><span class="fas fa-comments" style="min-height: 25px; min-width: 25px;"></span></div>
+    
+        <div class="card chat-box shadow visually-hidden" id="chatbox">
+
+            <div class="row mb-2" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="col" style="background-color: transparent;">
+                    <div class="card-title my-auto" style="font-size: large;">Assistente Virtuale</div>
+                </div>
+                <div class="col" style="background-color: transparent;">
+                    <div class="btn btn-primary" style="float: right; font-weight: bold;" onclick="closechat()"><span class="fas fa-times" style="min-height: 10px; min-width: 15px;"></span></div>
+                </div>
+                
+                
+            </div>
+            
+            
+            <main class="msger-chat">
+                <div class="msg left-msg">
+                  <div
+                   class="msg-img"
+                   style="background-image: url('../static/imgs/aipic.png') "
+                  ></div>
+            
+                  <div class="msg-bubble">
+                    <div class="msg-info">
+                      <div class="msg-info-name">ASSISTENTE</div>
+                      <div class="msg-info-time">Adesso</div>
+                    </div>
+            
+                    <div class="msg-text">
+                      Ciao, qui puoi scrivere una qualsiasi domanda relativa alla matematica! Ricorda, in alcuni casi per ricevere una risposta é necessario attendere una decina di secondi.
+                    </div>
+                  </div>
+                </div>
+
+            </main>
+
+            <form class="msger-inputarea">
+                <input type="text" class="msger-input" placeholder="Scrivi il tuo messaggio...">
+                <button type="submit" class="msger-send-btn">Send</button>
+            </form>
+        </div>
+
+        <div class="container-fluid sizing">
+            
+            <div class="row mt-3">
+                    <img class="img-fluid shadow hero-img" style="padding-left: 0; padding-right: 0;" src="../static/imgs/decimali_hero.png"></img>
+            </div>
+            
+    
+            <div class="row mt-3">
+                <div class="col section">
+                    <div class="card shadow">
+                        <div class="card-title bold">
+                            <p>Definizione</p>
+                        </div>
+                        <div class="card-text">
+                            <p> Un numero decimale è un numero reale espresso in base 10, utilizzando le cifre da 0 a 9, insieme a una virgola (o un punto, a seconda della convenzione locale) per separare la parte intera dalla parte decimale.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="col section">
+                    <div class="card shadow">
+                        <div class="card-title bold">
+                            <p>Curiosità</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Sai che esiste un tipo speciale di numero decimale chiamato "numero palindromo"? Un numero palindromo è leggibile allo stesso modo sia da sinistra a destra che da destra a sinistra.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="card shadow">
+                        <div class="card-title bold">
+                            <p>Cosa sono i numeri decimali?</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Nella vita quotidiana usiamo spesso i numeri decimali, ad esempio quando parliamo di misure e prezzi.
+                                <br>
+                                Se diciamo "Giorgio è alto un metro e cinquantasei" oppure "Quel pacco di figurine costa 1 euro e 10 centesimi", in entrambi i casi ci stiamo servendo di un numero decimale: 1,56 nel primo esempio e 1,10 nel secondo.
+                                <br>
+                                <br>
+                                Quelli che abbiamo scritto sono particolari numeri che in Matematica vengono chiamati <span class="bold">numeri decimali</span> o i <span class="bold">numeri con la virgola</span>. Cerchiamo di darne una definizione.
+                                <br>
+                                Un <span class="bold">numero decimale</span>, come 12,724, è un numero formato da due parti divise da una virgola:
+                                <br>
+                                <ul>
+                                    <li>la parte a sinistra della virgola viene detta <span class="bold">parte intera</span> (in 12,724 la parte intera è 12);</li>
+                                    <li>la parte a destra della virgola viene detta <span class="bold">parte decimale</span>  (in 12,724 la parte decimale è 724).</li>
+                                </ul>
+                            
+                            </p>
+                        </div>
+                        <div class="card-title bold">
+                            <p>Come leggere i numeri decimali: nomi e valori delle cifre</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Vediamo come si legge un numero decimale, come si chiamano le singole cifre che formano la parte decimale e a quali valori corrispondono. Se avete presente i valori delle posizioni e delle cifre che abbiamo già studiato per il <span class="bold">sistema decimale</span>, tutto risulterà piuttosto semplice.
+                                <br>
+                                Riguardo ai<span class="bold">nomi delle cifre decimali</span>, la prima cifra a destra della virgola si dice <span class="bold">cifra dei decimi</span> ed è seguita dalla <span class="bold">cifra dei centesimi</span> e dalla <span class="bold">cifra dei millesimi</span>...e cosí via.
+                                <br>
+                                Se escludiamo l'unità, ogni posizione verso destra ha un nome simile a quello della posizione simmetrica verso sinistra.
+                                <br>
+                                Per capire <span class="bold">come si leggono i numeri decimali</span>  basta attenersi a una regola semplice. Un numero decimale si legge partendo dalla parte intera e proseguendo con la parte decimale, che prende il nome del valore dell'ultima cifra. La virgola va letta come congiunzione "e".
+                                <br>
+                            </p>
+                        </div>
+                        <div class="card-title bold">
+                            <p>Confronto tra numeri decimali</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Passiamo al metodo per stabilire se due numeri decimali sono uguali e, se non lo fossero, di capire quale dei due è il maggiore (o il minore). Per confrontare due numeri con la virgola basta attenersi alle seguenti regole.
+                                <br>
+                                <span class="bold">1)</span> Se i due numeri hanno la stessa parte intera e la stessa parte decimale, allora sono uguali. Gli eventuali zeri a destra dell'ultima cifra decimale diversa da zero sono irrilevanti.
+                                <br>
+                                <span class="bold">2)</span> Se i due numeri hanno parte intera diversa, allora è maggiore quello che ha parte intera maggiore, indipendentemente dalla parte decimale.
+                                <br>
+                                <span class="bold">3)</span> Se i due numeri hanno la stessa parte intera, si confrontano le cifre della parte decimale a partire da quella più vicina alla virgola e procedendo verso destra. Quando si incontrano nella stessa posizione due cifre diverse, allora il numero maggiore è quello che corrisponde alla cifra maggiore.
+                                <br>
+                                <br>
+                                Come esempio di numeri decimali uguali, possiamo considerare 15,53=15,53.
+                                <br>
+                                Come esempio di numeri decimali con parte intera diversa: 5,74>2,74, infatti 5 è maggiore di 2. Come ulteriore esempio 12,13>7,123, in quanto 12 è maggiore di 7.
+                                <br>
+                                Come esempio di numeri decimali con parte intera uguale e parte decimale diversa possiamo considerare 18,163 e 18,183. Hanno la stessa parte intera (18), quindi passiamo alla parte decimale:
+                                <ul>
+                                    <li>la cifra dei decimi é 1 in entrambi</li>
+                                    <li>la cifra dei centesimi é 6 nel primo e 8 nel secondo.</li>
+                                </ul>
+                                Essendo 6 < 8, risulta 18,163 < 18,183, ossia il primo numero decimale è minore del secondo.
+                                <br>
+                                <span class="bold">Attenzione</span>: un errore molto frequente nel confronto tra numeri decimali consiste nel considerare maggiore il numero avente parte decimale formata da più cifre.
+                            </p>
+                        </div>
+                        <div class="card-title bold">
+                            <p>Rappresentazione grafica dei numeri decimali</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Come nel caso dei <span class="bold">numeri naturali</span>, anche i numeri decimali possono essere rappresentati su una semiretta orientata.
+                                <ul>
+                                    <li>Disegniamo una <span class="bold">semiretta</span> facendo corrispondere lo zero all'origine.</li>
+                                    <li>Fissiamo un <span class="bold">segmento</span>, che corrisponderà alla nostra unità u , e riportiamola quante volte vogliamo sulla semiretta, facendo corrispondere ai vari trattini i numeri naturali 1, 2, 3, ...</li>
+                                    <li>Dividiamo i nuovi segmenti ottenuti in 10 parti, ottenendo così i decimi.</li>
+                                    <li>Se vogliamo rappresentare i centesimi dividiamo ogni segmento in 100 parti, mentre per i millesimi in 1000 parti, e così via.</li>
+                                </ul>
+                                <br>
+                                Ad esempio, se volessimo dare una rappresentazione del numero decimale 1,8:
+                            </p>
+                            <img src="../static/imgs/rappresentazione-grafica.png" alt=""></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <button data-toggle="modal" data-target="#quizModal" data-whatever="@getbootstrap" style="border-color: transparent;"><img class="img-fluid hero-img shadow" style="padding-left: 0; padding-right: 0;"  src="../static/imgs/quiz.png"></img></button>
+                
+        </div>
+            
+    
+            <div class="row mt-3 mb-3">
+                <div class="col">
+                    <div class="footer shadow">
+                        <p class="footer-text my-auto"> © IL GRILLO</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    
+
+
+    </div>    
+    
+
+
+        
+    <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/script.js"></script>
+    
+</body>
+
+</html>

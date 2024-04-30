@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/chat.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css">
+    <link rel="icon" type="image/x-icon" href="../static/imgs/favicon.png">
+    <title>Il Grillo</title>
+</head>
+
+
+
+<body>
+
+    
+
+  <nav class="navbar navbar-expand-lg shadow w-100">
+    <div class="container-fluid" style="justify-content: center;">
+        <nav class="navbar navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand" onclick="window.location.href = '/' ; ">
+                <img src="../static/imgs/favicon.png" alt="" width="80" height="70" class="d-inline-block align-text-top">
+                
+              </a>
+            </div>
+        </nav>
+      </button>
+      
+    </div>
+  </nav>
+    <div class="container-fluid main">
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Questionario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: #8e408f; color: white; border-color: transparent; padding: 5px; border-radius: 10px; width: 30px; font-size: 15px;">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p class="qtitle">Cari studenti, al termine di questo percorso vi chiediamo di rispondere a un breve questionario di valutazione. <br>Le informazioni che ci darete saranno davvero utili per mettere a punto la versione definitiva della piattaforma Il Grillo.<br>Grazie per la vostra partecipazione!</p>
+
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Che classe frequenti?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="first1">
+                        <label class="form-check-label" for="first1">
+                          Prima media
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="first2" >
+                        <label class="form-check-label" for="first2">
+                          Seconda media
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault0" id="first3" >
+                        <label class="form-check-label" for="first3">
+                          Terza media
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Qual è il tuo sesso?</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="second1">
+                          <label class="form-check-label" for="second1">
+                            Maschio
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="second2" >
+                          <label class="form-check-label" for="second2">
+                            Femmina
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault3" id="second3" >
+                          <label class="form-check-label" for="second3">
+                            Altro
+                          </label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Come valuti l’utilizzo della piattaforma?</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="third1">
+                          <label class="form-check-label" for="third1">
+                            Molto semplice
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="third2" >
+                          <label class="form-check-label" for="third2">
+                            Abbastanza complessa
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault2" id="third3" >
+                          <label class="form-check-label" for="third3">
+                            Poco complessa
+                          </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label" style="font-weight: bold;">quali sono gli argomenti che più hai difficoltà in matematica?</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Come valuti la grafica dei contenuti? (Scelta multipla)</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth1">
+                          <label class="form-check-label" for="fourth1">
+                            Accattivante e coinvolgente
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth2" >
+                          <label class="form-check-label" for="fourth2">
+                            Facilita l’apprendimento
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth3" >
+                          <label class="form-check-label" for="fourth3">
+                            Confonde e distrae
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth4" >
+                          <label class="form-check-label" for="fourth4">
+                            Poco accattivante
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth5" >
+                          <label class="form-check-label" for="fourth5">
+                            Troppo descrittivi
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth6" >
+                          <label class="form-check-label" for="fourth6">
+                            Altro
+                          </label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label" style="font-weight: bold;">La spiegazione dell’argomento: </label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth1">
+                          <label class="form-check-label" for="fifth1">
+                            Si capisce ed è interessante
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth2" >
+                          <label class="form-check-label" for="fifth2">
+                            Si capisce ma non è interessante 
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth3" >
+                          <label class="form-check-label" for="fifth3">
+                            Non si capisce ma è interessante
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth4" >
+                          <label class="form-check-label" for="fifth4">
+                            Non si capisce e non è interessante
+                          </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Che tipo di contenuti preferiresti per lo studio? (Puoi lasciare più risposte)</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth1">
+                        <label class="form-check-label" for="sixth1">
+                          Più contenuti Video
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth2" >
+                        <label class="form-check-label" for="sixth2">
+                          Più contenuti descrittivi
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth3" >
+                        <label class="form-check-label" for="sixth3">
+                          Giochi e curiosità sull’argomento trattato
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth4" >
+                        <label class="form-check-label" for="sixth4">
+                          Va bene così
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">L'esperienza con il grillo è stata:</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh1">
+                        <label class="form-check-label" for="seventh1">
+                          Chiara e motivante 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh2" >
+                        <label class="form-check-label" for="seventh2">
+                          In linea con gli argomenti trattati dal professore
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh3" >
+                        <label class="form-check-label" for="seventh3">
+                          Confusa, non mi sono trovato molto bene
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh4" >
+                        <label class="form-check-label" for="seventh4">
+                          Noioso, ho faticato a capire 
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label" style="font-weight: bold;">Perché? Hai suggerimenti?</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label" style="font-weight: bold;">L’interazione con l’assistente virtuale ti ha aiutato a capire meglio l’argomento?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth1">
+                        <label class="form-check-label" for="eighth1">
+                          Sì, mi ha aiutato
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth2" >
+                        <label class="form-check-label" for="eighth2">
+                          No, non mi ha aiutato
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label" style="font-weight: bold;">Perché? Dacci un consiglio</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Invia Risposte</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color: #8e408f; color: white; border-color: transparent; padding: 5px; border-radius: 10px; width: 30px; font-size: 15px;">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quali tra i seguenti numeri appartengono all'insieme dei numeri naturali?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first1">
+                      <label class="form-check-label" for="first1">
+                        -3
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first2" >
+                      <label class="form-check-label" for="first2">
+                        0
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first3" >
+                      <label class="form-check-label" for="first3">
+                        5
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="first4" >
+                      <label class="form-check-label" for="first4">
+                        √2
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">A quale insieme appartiene il numero -7?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second1">
+                      <label class="form-check-label" for="second1">
+                        Numeri naturali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second2" >
+                      <label class="form-check-label" for="second2">
+                        Numeri interi
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second3" >
+                      <label class="form-check-label" for="second3">
+                        Numeri razionali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault2" id="second4" >
+                      <label class="form-check-label" for="second4">
+                        Numeri irrazionali
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri è un numero razionale?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third1">
+                      <label class="form-check-label" for="third1">
+                        √3
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third2" >
+                      <label class="form-check-label" for="third2">
+                        0.75
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third3" >
+                      <label class="form-check-label" for="third3">
+                        π (pi greco)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault3" id="third4" >
+                      <label class="form-check-label" for="third4">
+                        e (numero di Nepero)
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Qual è l'insieme universale nella teoria degli insiemi numerici?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth1">
+                      <label class="form-check-label" for="fourth1">
+                        Numeri naturali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth2" >
+                      <label class="form-check-label" for="fourth2">
+                        Numeri interi
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth3" >
+                      <label class="form-check-label" for="fourth3">
+                        Numeri razionali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault4" id="fourth4" >
+                      <label class="form-check-label" for="fourth4">
+                        Insieme dei numeri reali
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Gli insiemi di numeri razionali e irrazionali insieme formano:</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth1">
+                      <label class="form-check-label" for="fifth1">
+                        Insieme vuoto
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth2" >
+                      <label class="form-check-label" for="fifth2">
+                        Insieme dei numeri interi
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth3" >
+                      <label class="form-check-label" for="fifth3">
+                        Insieme dei numeri reali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault5" id="fifth4" >
+                      <label class="form-check-label" for="fifth4">
+                        Insieme dei numeri naturali
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri non appartiene all'insieme dei numeri interi?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth1">
+                      <label class="form-check-label" for="sixth1">
+                        -2
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth2" >
+                      <label class="form-check-label" for="sixth2">
+                        0
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth3" >
+                      <label class="form-check-label" for="sixth3">
+                        1
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault6" id="sixth4" >
+                      <label class="form-check-label" for="sixth4">
+                        √5
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri è sia razionale che intero?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh1">
+                      <label class="form-check-label" for="seventh1">
+                        -1.5
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh2" >
+                      <label class="form-check-label" for="seventh2">
+                        0
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh3" >
+                      <label class="form-check-label" for="seventh3">
+                        √2
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault7" id="seventh4" >
+                      <label class="form-check-label" for="seventh4">
+                        3/4
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">A quale insieme appartiene il numero complesso i?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth1">
+                      <label class="form-check-label" for="eighth1">
+                        Numeri naturali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth2" >
+                      <label class="form-check-label" for="eighth2">
+                        Numeri interi
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth3" >
+                      <label class="form-check-label" for="eighth3">
+                        Numeri razionali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault8" id="eighth4" >
+                      <label class="form-check-label" for="eighth4">
+                        Numeri complessi
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Quale tra i seguenti numeri è un numero primo?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth1">
+                      <label class="form-check-label" for="ninth1">
+                        4
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth2" >
+                      <label class="form-check-label" for="ninth2">
+                        7
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth3" >
+                      <label class="form-check-label" for="ninth3">
+                        10
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault9" id="ninth4" >
+                      <label class="form-check-label" for="ninth4">
+                        15
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label" style="font-weight: bold;">Gli insiemi di numeri reali e complessi insieme formano:</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth1">
+                      <label class="form-check-label" for="tenth1">
+                        Insieme vuoto
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth2" >
+                      <label class="form-check-label" for="tenth2">
+                        Insieme dei numeri razionali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth3" >
+                      <label class="form-check-label" for="tenth3">
+                        Insieme dei numeri irrazionali
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault10" id="tenth4" >
+                      <label class="form-check-label" for="tenth4">
+                        Insieme dei numeri complessi
+                      </label>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Invia Risposte</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn qst-btn shadow-chat" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" type="button"><span class="fa fa-question" style="min-height: 25px; min-width: 25px;"></span></div>
+        <div class="btn chat-btn shadow-chat" id="chat" onclick="openchat();"><span class="fas fa-comments" style="min-height: 25px; min-width: 25px;"></span></div>
+    
+        <div class="card chat-box shadow visually-hidden" id="chatbox">
+
+            <div class="row mb-2" style="display: flex; align-items: center; justify-content: space-between;">
+                <div class="col" style="background-color: transparent;">
+                    <div class="card-title my-auto" style="font-size: large;">Assistente Virtuale</div>
+                </div>
+                <div class="col" style="background-color: transparent;">
+                    <div class="btn btn-primary" style="float: right; font-weight: bold;" onclick="closechat()"><span class="fas fa-times" style="min-height: 10px; min-width: 15px;"></span></div>
+                </div>
+                
+                
+            </div>
+            
+            
+            <main class="msger-chat">
+                <div class="msg left-msg">
+                  <div
+                   class="msg-img"
+                   style="background-image: url('../static/imgs/aipic.png') "
+                  ></div>
+            
+                  <div class="msg-bubble">
+                    <div class="msg-info">
+                      <div class="msg-info-name">ASSISTENTE</div>
+                      <div class="msg-info-time">Adesso</div>
+                    </div>
+            
+                    <div class="msg-text">
+                      Ciao, qui puoi scrivere una qualsiasi domanda relativa alla matematica! Ricorda, in alcuni casi per ricevere una risposta é necessario attendere una decina di secondi.
+                    </div>
+                  </div>
+                </div>
+
+            </main>
+
+            <form class="msger-inputarea">
+                <input type="text" class="msger-input" placeholder="Scrivi il tuo messaggio...">
+                <button type="submit" class="msger-send-btn">Send</button>
+            </form>
+        </div>
+
+        <div class="container-fluid sizing">
+            
+            <!-- Modal -->
+    <div class="modal fade" id="quizmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quizmodal">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+            <div class="row mt-3">
+                    <img class="img-fluid shadow hero-img" style="padding-left: 0; padding-right: 0;" src="../static/imgs/insiemi_hero.png"></img>
+            </div>
+            
+    
+            <div class="row mt-3">
+                <div class="col section">
+                    <div class="card shadow">
+                        <div class="card-title bold">
+                            <p>Definizione</p>
+                        </div>
+                        <div class="card-text">
+                            <p>Un insieme numerico può includere numeri specifici o seguirne un modello, come <span class="bold">l'insieme dei numeri pari,</span> l'insieme dei numeri interi o l'insieme dei numeri reali.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="col section">
+                    <div class="card shadow">
+                        <div class="card-title bold">
+                            <p>Curiosità</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Gli insiemi sono usati in modo pratico in vari campi, inclusi matematica, informatica, statistica, scienze e <span class="bold">molte altre discipline!</span>  Gli insiemi numerici sono utilizzati in matematica per organizzare e descrivere gruppi di numeri in modo chiaro e conveniente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="card shadow">
+                        <div class="card-title bold">
+                            <p>Introduzione al significato di insieme</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                La definizione di insieme richiama sinonimi intuitivi di uso comune,
+                                quali: collezione, classe, famiglia, raccolta, gruppo, ecc. Gli insiemi
+                                sono generalmente indicati con lettere maiuscole (A, B, ... X, ...).
+                                <br>
+                                Un qualsiasi oggetto che appartiene a un insieme è definito <span class="bold">elemento.</span> 
+                                <br>
+                                Affinché un oggetto sia considerato elemento di un insieme, occorre che rispetti le
+                                seguenti due caratteristiche di appartenenza.
+                                <br>
+                                <ul>
+                                    <li>
+                                        <span class="bold">Caratteristica di individuabilità:</span> consente di stabilire con certezza se un elemento appartiene o meno a un determinato insieme.
+                                    </li>
+                                    <li>
+                                        <span class="bold">Caratteristica di distinguibilità:</span> verifica l’assenza di due o più elementi uguali in un medesimo insieme.
+                                    </li>
+                                    <br>
+                                </ul>
+                                Gli elementi di un insieme devono essere quindi identificabili senza ambiguità e distinguibili.
+                            </p>
+                            <iframe style="text-align: center;" src="https://www.youtube.com/embed/-vcFR988MIs" title="GLI INSIEMI - Lez. 1 - Prima Media" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <br>
+                            <p>
+                                Un insieme è vuoto quando non contiene elementi e si indica con il simbolo ∅.
+                                Gli elementi di un insieme numerico sono (ovviamente) numeri con cui è possibile
+                                svolgere determinate operazioni matematiche. In generale, due insiemi numerici A
+                                e B si distinguono per le diverse operazioni che si possono eseguire con i rispettivi
+                                elementi-numeri. Gli insiemi numerici che conosci sono:
+                                <ul>
+                                    <li>
+                                        insieme dei numeri naturali ℕ;
+                                    </li>
+                                    <li>
+                                        insieme dei numeri interi ℤ;
+                                    </li>
+                                    <li>
+                                        insieme dei numeri razionali ℚ;
+                                    </li>
+                                    <li>
+                                        insieme dei numeri reali ℝ.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="card-title bold">
+                            <p>Rappresentazione degli insiemi</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                <span class="bold">Modalità elencazione. </span>Gli elementi dell’insieme sono elencati tra una coppia di
+                                parentesi graffe, preceduta dalla lettera che identifica l’insieme e dal simbolo di uguale (non ha importanza la posizione occupata dagli elementi nell’elenco). 
+                                Nel caso di insieme infinito, cioè di un insieme con numero infinito di elementi, si scrivono
+                                alcuni elementi dell’insieme seguiti da punti di sospensione.
+                                <br>
+                                <br>
+                                <span class="bold">Modalità caratteristica. </span>Si dichiara la proprietà che caratterizza l’appartenenza
+                                degli elementi di un insieme tra una coppia di parentesi graffe, preceduta dalla lettera
+                                che identifica l’insieme e dal simbolo di uguale. In alternativa, tra le parentesi si scrive
+                                l’elemento generico dell’insieme seguito dal simbolo | che significa “tale che”.
+                                <br>
+                                <br>
+                                <span class="bold">Modalità grafica (Eulero-Venn).</span> Si collocano gli elementi di un insieme all’interno di una linea chiusa; 
+                                il singolo elemento è rappresentato da un punto affiancato
+                                dal nome o dal simbolo del relativo elemento.
+                                <br>
+                                <br>
+                                Per insiemi con un numero elevato di elementi è preferibile adottare la modalità caratteristica. La modalità grafica ha invece il vantaggio di fornire una visione immediata
+                                di un insieme ed è utile per comprendere le operazioni e le definizioni fondamentali della teoria degli insiemi.
+                                <br>
+                                Gli elementi di un insieme numerico sono numeri caratterizzati dalla capacità di
+                                svolgere determinate operazioni.
+                                Affinché i numeri di un insieme siano idonei a compiere ulteriori operazioni, occorre
+                                ampliare l’insieme con altri numeri.
+                                Per questo motivo, l’insieme dei naturali ℕ è ampliato all’insieme degli interi ℤ, che
+                                a sua volta è ampliato all’insieme dei razionali ℚ e all’insieme dei reali ℝ. In figura
+                                il grafico di Eulero-Venn evidenzia il caratteristico progressivo ampliamento degli
+                                insiemi numerici.
+                            </p>
+                        </div>
+                        <div class="card-title bold">
+                            <p>Operazioni con insiemi</p>
+                        </div>
+                        <div class="card-text">
+                            <p>
+                                Le possibili operazioni tra insiemi sono: intersezione, unione, differenza, prodotto cartesiano.
+                                <br>
+                                Dati gli insiemi A e B, l’operazione di <span class="bold">intersezione</span> ricerca gli elementi comuni ai
+                                due insiemi. Il risultato dell’operazione è l’insieme intersezione, in simboli
+                                <br>
+                                A ∩ B
+                                <br>
+                                e si legge <span class="bold">A intersezione B.</span> L’operazione è valida per un numero N qualsiasi di
+                                insiemi e, in questo caso, l’insieme intersezione è composto dagli elementi comuni
+                                a tutti gli N insiemi, cioè A ∩ B ∩ C ... ∩ ...
+                                In modalità caratteristica l’insieme intersezione è
+                                <br>
+                                A ∩ B = {x | x ∈ A e B}
+                                <br>
+                                dove la congiunzione “e” evidenzia la condizione che gli elementi dell’insieme
+                                intersezione devono appartenere a entrambi gli insiemi A e B.
+                                <br>
+                                Due o più insiemi si dicono <span class="bold">disgiunti</span> se non hanno elementi in comune, cioè se la
+                                loro intersezione è l’insieme vuoto. Quindi, se A e B sono due insiemi disgiunti, il loro
+                                insieme intersezione è A ∩ B = ∅.
+                                <br>
+                                L’intersezione tra due insiemi uguali è l’insieme stesso, cioè A ∩ A = A. Infatti gli elementi comuni a entrambi gli insiemi A sono, ovviamente, gli elementi dell’insieme A.
+                                L’intersezione tra l’insieme A e l’insieme vuoto è l’insieme vuoto, cioè A ∩ ∅ = ∅. Infatti, essendo l’insieme vuoto privo di elementi, l’intersezione che prevede gli elementi
+                                comuni dei due insiemi è un insieme privo di elementi.
+                                <br>
+                                Dati gli insiemi A e B, l’operazione di unione ricerca tutti gli elementi degli insiemi.
+                                Il risultato dell’operazione è l’insieme unione, in simboli
+                                <br>
+                                A ∪ B
+                                <br>
+                                e si legge <span class="bold">A unione B.</span> L’operazione è valida per un numero N qualsiasi di insiemi
+                                e, in questo caso, l’insieme unione è composto dagli elementi di tutti gli N insiemi,
+                                cioè A ∪ B ∪ C ... ∪ ...
+                                In modalità caratteristica l’insieme unione è
+                                <br>
+                                A ∪ B = {x | x ∈ A o B}
+                                <br>
+                                dove la congiunzione “o” evidenzia la condizione che gli elementi dell’insieme
+                                unione devono appartenere almeno a uno degli insiemi A e B.
+                                <br>
+                                L’unione tra due insiemi uguali è l’insieme stesso, cioè A ∪ A = A. Infatti gli elementi
+                                che appartengono ad A o ad A sono gli elementi stessi di A.
+                                L’unione tra l’insieme A e l’insieme vuoto è ovviamente l’insieme A, cioè A ∪ ∅ = A.
+                                <br>
+                                Dati gli insiemi A e B, l’operazione differenza tra A e B ricerca gli elementi di A che
+                                non appartengono a B. Il risultato dell’operazione è <span class="bold">l’insieme differenza</span>, in simboli
+                                <br>
+                                A − B
+                                <br>
+                                e si legge <span class="bold">A non appartiene a B</span> oppure <span class="bold">A meno B.</span> In modalità caratteristica
+                                l’insieme differenza è
+                                <br>
+                                A − B = {x | x ∈ A e x ∉ B}
+                                <br>
+                                dove i simboli ∈ e ∉ evidenziano che l’elemento dell’insieme differenza deve
+                                appartenere al primo insieme (A) e non al secondo (B).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <button data-toggle="modal" data-target="#quizModal" data-whatever="@getbootstrap" style="border-color: transparent;"><img class="img-fluid hero-img shadow" style="padding-left: 0; padding-right: 0;"  src="../static/imgs/quiz.png"></img></button>
+                
+        </div>
+            
+    
+            <div class="row mt-3 mb-3">
+                <div class="col">
+                    <div class="footer shadow">
+                        <p class="footer-text my-auto"> © IL GRILLO</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    
+
+
+    </div>    
+    
+
+
+        
+    <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/script.js"></script>
+    
+</body>
+
+</html>
